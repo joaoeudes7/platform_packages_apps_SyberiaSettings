@@ -31,21 +31,23 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-public class SystemSettings extends SettingsPreferenceFragment {
+public class BatteryScreenSettings extends SettingsPreferenceFragment {
 
-	private static final String CATEGORY_ANIMATIONS = "animations";
-	private static final String CATEGORY_RESENT = "recents_ui";
-	private static final String CATEGORY_SYS_APP_REMOVER = "system_app_remover";
+	private Preference mChargingLeds;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        addPreferencesFromResource(R.xml.system_settings);
+        addPreferencesFromResource(R.xml.battery_settings);
 
-        PreferenceScreen preferenceScreen = getPreferenceScreen();
-		preferenceScreen.removePreference(findPreference(CATEGORY_ANIMATIONS));
-		preferenceScreen.removePreference(findPreference(CATEGORY_RESENT));
-		preferenceScreen.removePreference(findPreference(CATEGORY_SYS_APP_REMOVER));
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        
+        mChargingLeds = (Preference) findPreference("charging_light");
+        if (mChargingLeds != null
+                && !getResources().getBoolean(
+                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            prefScreen.removePreference(mChargingLeds);
+        }
     }
 
     @Override

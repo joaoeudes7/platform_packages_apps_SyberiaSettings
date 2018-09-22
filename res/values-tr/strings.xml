@@ -4,10 +4,13 @@
     Date: 16.08.2018
     Time: 21:24
     Author: @alexxxdev <alexxxdev@ya.ru>
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
+
     http://www.apache.org/licenses/LICENSE-2.0
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +20,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="syberia_settings_title">Syberia Ayarları</string>
-    <string name="syberia_dashboard_summary">Syberia Projesine eklenen birçok ekstra özellik</string>
+    <string name="syberia_dashboard_summary">Syberia Project\'e eklenen birçok ekstra özellik</string>
 
     <string name="system_category_title">Sistem</string>
     <string name="system_category_summary">Çeşitli sistem ayarları</string>
@@ -36,7 +39,8 @@
     <string name="traffic_options_title">Ağ trafiği göstergeleri</string>
     <string name="traffic_options_summary">Ağ trafiği bilgilerini görüntüle</string>
     <string name="misc_extensions_title">Çeşitli ayarlar</string>
-    <string name="misc_extensions_summary"></string>
+    <string name="misc_extensions_summary">Diğer bölümlere dahil olmayan ayarlar</string>
+    <string name="navbar_title">Gezinti Çubuğu</string>
 
     <string name="general_tweaks_title">Genel Ayarlar</string>
     <string name="animations_title">Animasyonlar</string>
@@ -74,9 +78,10 @@
     <string name="power_menu_title">Güç menüsü</string>
     <string name="power_menu_title_summary">Güç menüsü seçeneklerini görüntüleme veya değiştirme</string>
     <string name="powermenu_screenshot">Ekran görüntüsü</string>
+    <string name="powermenu_screenrecord">Ekran videosu</string>
     <string name="powermenu_power">Güç</string>
-    <string name="powermenu_restart">Yeniden başlat</string>
-    <string name="powermenu_restart_recovery">Gelişmiş yeniden başlat</string>
+    <string name="powermenu_restart">Yeniden başlatma</string>
+    <string name="powermenu_restart_recovery">Gelişmiş yeniden başlatma</string>
     <string name="powermenu_airplane">Uçak modu</string>
     <string name="powermenu_settings">Ayarlar</string>
     <string name="powermenu_lockdown">Kilitle</string>
@@ -128,11 +133,121 @@
 
     <!-- Proximity wake -->
     <string name="proximity_wake_title">Yanlışlıkla uyandırmayı önle</string>
-    <string name="proximity_wake_summary">Ekranı uyandırmadan önce yakınlık sensörünü kontrol eder</string>
+    <string name="proximity_wake_summary">Ekranı uyandırmadan önce yakınlık sensörünü kontrol et</string>
 
      <!-- Screen off animation -->
     <string name="screen_off_animation_title">Ekran kapatma animasyonu</string>
     <string name="screen_off_animation_default">Varsayılan</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
+    
+    <!-- Statusbar Tuner -->
+    <string name="statusbar_items_title">Durum çubuğu öğeleri</string>
+
+    <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Kilit ekranı kısayolları</string>
+
+    <!-- Navbar tuner -->
+    <string name="navbar_tuner_title">Gezinti çubuğu düğmeleri</string>
+    <string name="navbar_visibility">Gezinti çubuğunu aktifleştir</string>
+
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Parlaklık kontrolü</string>
+    <string name="status_bar_toggle_brightness_summary">Durum çubuğunu kaydırarak parlaklığı ayarla</string>
+    
+    <string name="flash_on_call_category">Flaş yakıp söndür</string>
+    <string name="flash_on_call_title">Gelen aramalarda flaşı yakıp söndür</string>
+    <string name="flash_on_call_delay_title">Flaş yakıp söndürme süresi</string>
+   
+    <!--Volume keys -->
+    <string name="volume_rocker_wake_title">Ses tuşu ile uyanma</string>
+    <string name="volume_rocker_wake_summary">Ses tuşlarına basmak cihazınızı uyandırır</string>
+    <string name="volume_rocker_music_controls_title">Müzik kontrolü</string>
+    <string name="volume_rocker_music_controls_summary">Ekran kapalıyken ses tuşlarına uzun basarak parçaları değiştir</string>
+
+    <!-- Double-tap-to sleep -->
+    <string name="double_tap_sleep_gesture_title">Çift tıklama ile uyut</string>
+    <string name="double_tap_sleep_gesture_summary">Durum çubuğuna çift tıklayarak cihazı uyut</string>
+    
+    <!-- DoubleTap2Sleep -->
+    <string name="double_tap_sleep_lockscreen_title">Çift tıklama ile uyut</string>
+    <string name="double_tap_sleep_lockscreen_summary">Kilit ekranında herhangi bir yere çift tıklayarak cihazı uyut</string>
+    
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Arama titreşim ayarları</string>
+    <string name="incall_vibrate_connect_title">Yanıtlandığında titret</string>
+    <string name="incall_vibrate_call_wait_title">Beklemede titret</string>
+    <string name="incall_vibrate_disconnect_title">Arama sonlandığında titret</string>
+    
+        <!-- Statusbar net monitor -->
+    <string name="network_traffic_state_title">Ağ trafiği</string>
+    <string name="network_traffic_state_summary">Durum çubuğunda ağ aktivitesini göster</string>
+    <string name="network_traffic_autohide_threshold_title">Ağ aktivitesi otomatik gizleme sınırı (KB/s)</string>
+    
+    <!-- Power menu on secure lockscreen -->
+    <string name="powermenu_lockscreen_title">Kilit ekranında görüntülenme</string>
+    <string name="powermenu_lockscreen_summary">Kilit ekranındayken güç menüsünü göstermeyi ve kullanmayı aktifleştir</string>
+
+    <string name="notifications_title">Bildirimler</string>
+
+    <!-- Smart pulldown-->
+    <string name="smart_pulldown_title">Smart pulldown</string>
+    <string name="smart_pulldown_summary">%1$s bildirim varken hızlı ayarları aç</string>
+    <string name="smart_pulldown_none_summary">Bildirim yokken hızlı ayarları aç</string>
+    <string name="smart_pulldown_off">Kapalı</string>
+    <string name="smart_pulldown_none">Bildirim yokken</string>
+    <string name="smart_pulldown_dismissable">Temizlenebilen bildirim yokken</string>
+    <string name="smart_pulldown_ongoing">Devam eden bildirim yokken</string>
+    
+    <string name="battery_category_title">Pil ayarları</string>
+    <string name="battery_category_summary">Pil ayarları</string>
+     
+    <!-- Battery light -->
+    <string name="battery_light_settings">Pil şarj ışığı</string>
+    <string name="battery_light_enable">Aktifleştir</string>
+    <string name="battery_light_allow_on_dnd_title">Rahatsız etme modunda pil ışığı</string>
+    <string name="battery_light_low_blinking_title">Düşük pilde yakıp söndür</string>
+    <string name="battery_light_cat">Şarj olurken pil ışığı rengi</string>
+    <string name="battery_light_low_color">Düşük pil</string>
+    <string name="battery_light_medium_color">Orta pil</string>
+    <string name="battery_light_full_color">Neredeyse dolu pil</string>
+    <string name="battery_light_reallyfull_color">Dolu (100) pil</string>
+    
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">Bildirimleri Zorla Genişlet</string>
+    <string name="force_expanded_notifications_summary">Yalnızca genişletilebilen bildirimler için mevcut</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_notifications_title">Açılır pencere bildirimleri</string>
+    <string name="summary_heads_up_enabled">Açılır pencere bildirimleri aktif</string>
+    <string name="summary_heads_up_disabled">Açılır pencere bildirimleri devre dışı</string>
+    <string name="add_heads_up_package">Uygulama ekle</string>
+    <string name="add_heads_up_stoplist_summary">Bu uygulamalarda açılır pencere bildirimlerini kapat</string>
+    <string name="profile_choose_app">Uygulama seç</string>
+    <string name="dialog_delete_title">Sil</string>
+    <string name="dialog_delete_message">Seçili öğe silinsin mi?</string>
+    <string name="add_heads_up_blacklist_summary">Bu uygulamalardan gelen açılır pencere bildirimlerini engelle</string>
+    <string name="heads_up_stoplist_title">Kapatma Listesi</string>
+    <string name="heads_up_blacklist_title">Engelli Listesi</string>
+    
+     <!-- Heads up timeout -->
+    <string name="heads_up_time_out_title">Zaman aşımı</string>
+    <string name="heads_up_time_out_summary">Açılır pencere bildirimleri <xliff:g id="number">%d</xliff:g> saniye gösterilecek</string>
+    <string name="heads_up_time_out_2sec">2 saniye</string>
+    <string name="heads_up_time_out_4sec">4 saniye</string>
+    <string name="heads_up_time_out_5sec">5 saniye</string>
+    <string name="heads_up_time_out_6sec">6 saniye</string>
+    <string name="heads_up_time_out_8sec">8 saniye</string>
+    <string name="heads_up_time_out_10sec">10 saniye</string>
+    
+    <!-- Heads up snooze -->
+    <string name="heads_up_snooze_title">Erteleme zamanlayıcısı</string>
+    <string name="heads_up_snooze_summary_one_minute">Açılır pencere bildirimini yukarı kaydırmak o uygulamadan gelen açılır pencere bildirimlerini 1 dakikalığına engeller</string>
+    <string name="heads_up_snooze_summary">Açılır pencere bildirimini yukarı kaydırmak o uygulamadan gelen açılır pencere bildirimlerini <xliff:g id="number">%d</xliff:g> dakikalığına engeller</string>
+    <string name="heads_up_snooze_disabled_summary">Erteleme zamanlayıcısı devre dışı</string>
+    <string name="heads_up_snooze_1min">1 dakika</string>
+    <string name="heads_up_snooze_5min">5 dakika</string>
+    <string name="heads_up_snooze_10min">10 dakika</string>
+    <string name="heads_up_snooze_15min">15 dakika</string>
+    <string name="heads_up_snooze_20min">20 dakika</string>
 </resources>

@@ -1,6 +1,6 @@
 /*
  * Copyright © 2018 Syberia Project
- * Date: 22.08.2018
+ * Date: 29.08.2018
  * Time: 21:21
  * Author: @alexxxdev <alexxxdev@ya.ru>
  *
@@ -20,6 +20,7 @@
 package com.syberia.settings.fragments;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -28,47 +29,51 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceFragmentCompat;
-import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.syberia.settings.preference.CustomSeekBarPreference;
+import com.syberia.settings.Utils;
+
 import com.android.internal.logging.nano.MetricsProto;
 
-public class GeneralTweaks extends SettingsPreferenceFragment implements OnPreferenceChangeListener{
+public class DialerSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener{
 
-	private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
-	private ListPreference mScreenOffAnimation;
+	private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+
+	private CustomSeekBarPreference mFlashOnCallWaitingDelay;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        addPreferencesFromResource(R.xml.general_tweaks);
-		ContentResolver resolver = getActivity().getContentResolver();
-        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
-        int screenOffStyle = Settings.System.getInt(resolver, Settings.System.SCREEN_OFF_ANIMATION, 0);
-        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
-        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
-        mScreenOffAnimation.setOnPreferenceChangeListener(this);
+        addPreferencesFromResource(R.xml.dialer_settings);
 
-        PreferenceScreen preferenceScreen = getPreferenceScreen();
-        preferenceScreen.removePreference(findPreference("proximity_on_wake"));
+        PreferenceScreen prefScreen = getPreferenceScreen();
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!Utils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(incallVibCategory);
+        }
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+
+        mFlashOnCallWaitingDelay = (CustomSeekBarPreference) findPreference(FLASH_ON_CALL_WAITING_DELAY);
+        mFlashOnCallWaitingDelay.setValue(Settings.System.getInt(resolver, Settings.System.FLASH_ON_CALLWAITING_DELAY, 200));
+        mFlashOnCallWaitingDelay.setOnPreferenceChangeListener(this);
     }
 
-    @Override
+	@Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-		ContentResolver resolver = getActivity().getContentResolver();
-		if (preference == mScreenOffAnimation) {
-			String value = (String) newValue;
-			Settings.System.putInt(resolver,
-			Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf(value));
-			int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
-			mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
-			return true;
-		}        
-    	return false;
-    }
+		if (preference == mFlashOnCallWaitingDelay) {
+            int val = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(), Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
+            return true;
+        }
+        return false;
+	}
 
     @Override
     public int getMetricsCategory() {
